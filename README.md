@@ -2,7 +2,8 @@
 
 A starter kit for building real-time web applications with TypeScript, featuring both MongoDB and MySQL database options.
 
-![Project Logo or Screenshot](link-to-image.png)
+![Real-Time Starter Kit Screenshot](https://www.simform.com/wp-content/uploads/2022/04/Node.js-App.png)
+
 
 ## Table of Contents
 - [About](#about)
