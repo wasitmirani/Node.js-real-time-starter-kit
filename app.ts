@@ -5,6 +5,7 @@ import express, { Application } from 'express'
 import morgan from 'morgan'
 import apiRouter from "./routes/api";
 import bodyParser from 'body-parser';
+import mongoose_dbconnection from "./config/mongoconnector";
 
 require('dotenv').config();
 
@@ -14,8 +15,11 @@ export class App {
     app: Application;
     constructor(
         private port?: number | string
+       
     ) {
+        mongoose_dbconnection();
         this.app = express();
+    
         this.settings();
         // this.middleware();
         // this.routes();
@@ -32,9 +36,10 @@ export class App {
         this.app.use(bodyParser.json());
     }
     private apiRoutes(){
-        this.app.use('/api',apiRouter);
+       
         this.app.use(express.json());
         this.app.use(bodyParser.json());
+        this.app.use('/api',apiRouter);
     }
   
 
